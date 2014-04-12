@@ -1,0 +1,495 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.cf:after {
+  clear: both; }
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+  *zoom: 1; }
+
+/* Text meant only for screen readers */
+.assistive-text {
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important; }
+
+.screen-reader-text {
+  display: none; }
+
+body {
+  font-family: "Source Sans Pro";
+  color: #222222;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+
+body.single #content,
+body.page #content,
+body.error404 #content {
+  font-size: 80%; }
+body.single #primary,
+body.page #primary,
+body.error404 #primary {
+  font-size: 16px; }
+
+pre,
+code {
+  font-size: .85em;
+  line-height: 1.5;
+  font-family: "Inconsolata"; }
+
+@media only screen and (min-width: 900px) {
+  body {
+    font-size: 120%; } }
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 140%; } }
+h1, h2, h3, h4, h5, h6, #blog-title {
+  font-weight: bold;
+  margin-bottom: 1em;
+  line-height: auto;
+  font-family: "League Gothic"; }
+
+h1 {
+  font-size: 2em;
+  margin-bottom: .5em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
+
+h4 {
+  font-size: 1.1em; }
+
+h5, h6 {
+  font-size: 1em;
+  margin-bottom: 0; }
+
+p, ol, ul {
+  margin: 0 0 1em 0; }
+
+strong, b {
+  font-weight: bold; }
+
+em, i {
+  font-style: italic; }
+
+a {
+  text-decoration: none; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+object {
+  max-width: 100%; }
+
+hr {
+  height: 1px;
+  margin: 0 0 1em 0;
+  border: none; }
+
+ul, ol {
+  list-style: decimal;
+  margin-left: 1.5em; }
+
+ul li, ol li {
+  padding-left: .5em; }
+
+ul {
+  list-style: disc; }
+
+pre {
+  overflow: auto;
+  max-height: 20em;
+  padding: 1em;
+  margin-bottom: 1em;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06) inset;
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06) inset;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06) inset; }
+
+blockquote {
+  margin-left: 0;
+  padding-left: 25px;
+  border-left: 4px dotted #eee;
+  font-style: italic; }
+
+a {
+  color: #b2d234; }
+  a:visited {
+    color: #b2d234; }
+  a:hover {
+    color: #c2db5e; }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #222222;
+  -webkit-transition: 200ms color linear;
+  -moz-transition: 200ms color linear;
+  -o-transition: 200ms color linear;
+  transition: 200ms color linear; }
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+  color: #91ad26; }
+
+.wp-post-image {
+  margin-bottom: 1.5em; }
+
+.single .entry-title,
+.single .page-title,
+.page .entry-title,
+.page .page-title {
+  font-size: 2em; }
+.single .entry-title,
+.page .entry-title {
+  margin-bottom: 0; }
+
+.taxonomy-description {
+  margin-top: .25em;
+  font-size: .7em;
+  color: #6a6a6a; }
+  .taxonomy-description p {
+    display: inline; }
+  .taxonomy-description p:last-child {
+    margin-bottom: 0; }
+
+.archive-title {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 1.2em;
+  padding: .2em 0 0 0;
+  margin-bottom: 0;
+  font-weight: normal; }
+
+.archive-header {
+  margin: 0 auto 2em;
+  max-width: 700px;
+  position: relative;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 4em;
+  padding: 1em 0; }
+  .archive-header:before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #f2f2f2; }
+  .archive-header:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #f2f2f2; }
+
+.post-content p {
+  text-align: left; }
+
+.post-meta {
+  margin-bottom: 60px;
+  font-size: .9em;
+  color: #999; }
+  .post-meta .hashtag {
+    padding: 2px 8px;
+    margin-right: 5px;
+    color: #888888;
+    display: inline-block;
+    -webkit-transition: 200ms color linear, 200ms background-color linear;
+    -moz-transition: 200ms color linear, 200ms background-color linear;
+    -o-transition: 200ms color linear, 200ms background-color linear;
+    transition: 200ms color linear, 200ms background-color linear; }
+    .post-meta .hashtag:hover {
+      color: #b2d234;
+      background-color: #f1f7db; }
+    .post-meta .hashtag a {
+      color: #888888;
+      -webkit-transition: 200ms color linear;
+      -moz-transition: 200ms color linear;
+      -o-transition: 200ms color linear;
+      transition: 200ms color linear; }
+      .post-meta .hashtag a:hover {
+        color: #b2d234; }
+
+#content {
+  padding-bottom: 40px; }
+
+#masonry {
+  padding-bottom: 40px; }
+  #masonry .panel .genericon {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+    color: #222222;
+    display: block;
+    margin: 0 auto; }
+  #masonry .sticky .panel .genericon:before {
+    content: '\f308' !important; }
+  #masonry .status-private .panel .genericon:before {
+    content: '\f470' !important; }
+  #masonry .hentry {
+    width: 300px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    background-color: white; }
+    #masonry .hentry p:last-child {
+      margin-bottom: 0; }
+  #masonry .post-image,
+  #masonry article > a > img {
+    display: block; }
+  #masonry .panel {
+    padding: 30px;
+    font-size: .75em;
+    border: 3px solid #f2f2f2; }
+    .custom-background #masonry .panel {
+      border: none; }
+    #masonry .panel .entry-title {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      font-weight: normal;
+      text-align: center; }
+      #masonry .panel .entry-title a,
+      #masonry .panel .entry-title a:visited {
+        display: inline-block;
+        color: #222222;
+        padding-bottom: 5px;
+        border-bottom: 3px solid #b2d234; }
+      #masonry .panel .entry-title a:hover {
+        color: #b2d234; }
+    #masonry .panel p {
+      color: #555555;
+      text-align: center;
+      overflow: hidden; }
+  #masonry .has-featured-image .panel,
+  #masonry .format-audio .panel {
+    border-top-width: 0; }
+  #masonry .post-meta {
+    font-size: .8em; }
+  #masonry .wp-post-image {
+    margin-bottom: 0;
+    display: block; }
+  #masonry .only-title {
+    color: white;
+    padding: 3em .5em;
+    background: #222222;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 0; }
+    #masonry .only-title a {
+      color: white; }
+  #masonry .format-aside .panel .genericon {
+    margin-bottom: 10px; }
+  #masonry .format-status {
+    font-size: 1.2em;
+    font-family: "Inconsolata"; }
+    #masonry .format-status .panel .genericon {
+      margin-bottom: 10px; }
+  #masonry .format-quote {
+    font-family: "Inconsolata"; }
+    .custom-background #masonry .format-quote {
+      padding: 30px; }
+    #masonry .format-quote, #masonry .format-quote a {
+      color: #222222;
+      -webkit-transition: 200ms color linear;
+      -moz-transition: 200ms color linear;
+      -o-transition: 200ms color linear;
+      transition: 200ms color linear; }
+      #masonry .format-quote:hover, #masonry .format-quote a:hover {
+        color: #b2d234; }
+  #masonry .flip-container {
+    background-color: transparent;
+    text-align: center; }
+
+.flipper {
+  position: relative;
+  display: block; }
+
+.front,
+.front img,
+.back {
+  display: block; }
+
+.back {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b2d234;
+  overflow: hidden;
+  -webkit-transition: 200ms opacity ease-in-out;
+  -moz-transition: 200ms opacity ease-in-out;
+  -o-transition: 200ms opacity ease-in-out;
+  transition: 200ms opacity ease-in-out; }
+  .flipper:hover .back {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    z-index: 3; }
+  .back .entry-title {
+    font-weight: 100;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 0;
+    font-size: 1.3em; }
+  .back .entry-title,
+  .back .entry-summary {
+    color: contrast-color(#b2d234, white, #222222, 50%); }
+  .back .entry-summary {
+    margin-top: .2em;
+    font-size: .8em;
+    margin-right: 20px;
+    margin-left: 20px; }
+  .back .vertical-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%; }
+
+.front {
+  z-index: 2; }
+
+.sticky,
+.bypostauthor {
+  visibility: visible; }
+
+/* Alignment */
+.alignleft {
+  display: inline;
+  float: left;
+  margin: 1em auto;
+  margin-right: 1.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin: 1em auto;
+  margin-left: 1.5em; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 1em auto; }
+
+/* Captions */
+.wp-caption {
+  margin-bottom: 28px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  width: auto !important;
+                        /* need this to overwrite any specified widths that
+						 may be added through the backend */ }
+  .wp-caption p:last-child {
+    margin-bottom: 0; }
+  .wp-caption .wp-caption-text {
+    color: #999;
+    font-size: .9em;
+    line-height: 160%;
+    font-style: italic;
+    padding: 0 0 1em; }
+
+.infinite-loader {
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 40px;
+  display: block; }
+  .infinite-loader .spinner {
+    margin: 0 auto; }
+
+.sharedaddy {
+  margin-top: 25px; }
+
+body#tinymce {
+  padding: 5px 10px;
+  font-size: 120%;
+  line-height: 1.5;
+  background-color: white; }

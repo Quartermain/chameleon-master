@@ -1,0 +1,128 @@
+body {
+	font-family: $body-font-family;
+	color: $text-color;
+	font-size: 100%;
+	line-height: $base-line-height;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+body.single,
+body.page,
+body.error404{
+	#content{
+		font-size: 80%;
+	}
+	#primary{
+		font-size: $base-font-size;
+	}
+}
+
+pre,
+code{
+	font-size: .85em;
+	line-height: 1.5;
+	font-family: $mono-font-family;
+}
+
+
+
+@media only screen and (min-width : 900px) {
+	body {
+		font-size: 120%;
+	}
+}
+
+@media only screen and (min-width : 1200px) {
+	body {
+		font-size: 140%;
+	}
+}
+
+h1,h2,h3,h4,h5,h6,#blog-title{
+  font-weight: bold;
+  margin-bottom: 1em;
+  line-height: auto;
+  font-family: $heading-font-family;
+}
+
+h1 {
+	font-size: 2em;
+	margin-bottom: .5em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3{
+	font-size: 1.3em;
+}
+
+h4{
+	font-size: 1.1em;
+}
+
+h5,h6{
+	font-size: 1em;
+	margin-bottom: 0;
+}
+
+p, ol, ul {
+	margin: 0 0 1em 0;
+}
+
+strong,b{
+	font-weight: bold;
+}
+
+em,i{
+	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+object{
+	max-width: 100%;
+}
+
+hr {
+	height: 1px;
+	margin: 0 0 1em 0;
+	border: none;
+}
+
+ul, ol {
+	list-style: decimal;
+	margin-left: 1.5em;
+}
+ul li, ol li {
+	padding-left: .5em;
+}
+
+ul {
+	list-style: disc;
+}
+
+pre {
+	overflow: auto;
+	max-height: 20em;
+	padding: 1em;
+	margin-bottom: 1em;
+	@include border-radius(4px);
+	@include box-shadow(0 2px 2px rgba(0, 0, 0, 0.06) inset);
+}
+
+blockquote {
+	margin-left: 0;
+	padding-left: 25px;
+	border-left: 4px dotted #eee;
+	font-style: italic;
+}

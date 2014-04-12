@@ -1,0 +1,95 @@
+
+/*
+ * Paginated Posts
+ */
+
+.page-links{
+	overflow: auto;
+	margin-bottom: 1.5em;
+	font-size: 1em;
+
+	a{
+		padding: 9px 0;
+		display: inline-block;
+		border-radius: 3px;
+		text-align: center;
+		min-width: 2em;
+
+		&:hover{
+			color: contrast-color($primary-color,$black,$white,50%);
+			background-color: $primary-color;
+		}
+	}
+}
+
+.page-links-title{
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	color: rgb(153, 153, 153);
+	display: block;
+	margin-bottom: .6em;
+}
+
+@media screen and ( min-width: 640px ){
+
+	.page-links{
+		font-size: .65em;
+	}
+
+	.page-links a{
+		padding: 5px 0;
+	}
+
+}
+
+/*
+ * Page & Post Pagination
+ *
+*/
+.post-navigation,
+.paging-navigation {
+	overflow: auto;
+	border-top: 1px solid #f2f2f2;
+	background-color: $white;
+	font-weight: bold;
+	font-size: .65em;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	.neverending &{
+		display: none;
+	}
+}
+
+.post-navigation .nav-previous,
+.paging-navigation .nav-previous {
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.post-navigation a,
+.paging-navigation a,
+#infinite-handle a {
+	padding: 2em 1em;
+	display: block;
+	text-align: center;
+	@include transition(all 200ms ease-in);
+}
+
+@media screen and (min-width: 641px) {
+	.post-navigation .nav-previous,
+	.paging-navigation .nav-previous {
+		float: left;
+		border: none;
+		width: 50%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.post-navigation .nav-next,
+	.paging-navigation .nav-next {
+		float: right;
+		width: 50%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

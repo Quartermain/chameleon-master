@@ -1,0 +1,77 @@
+/*** Config ***/
+
+/* Colors */
+$borderColor1: rgba($primary-color,0.25); /* used for row 1 & 2 */
+$borderColor2: rgba($primary-color,0.50);
+$borderColor3: rgba($primary-color,0.75);
+$borderColor4: rgba($primary-color,1.0);  /* used for row 1 & 2 */
+
+/* Dimensions */
+$borderWidthX: 20px;
+$borderWidthY: 20px;
+
+
+/*** Animations / styles ***/
+
+@include keyframes(loading) {
+  0% {
+    border-color: $borderColor1;
+    border-top-color: $borderColor4;
+  }
+  25% {
+    border-color: $borderColor1;
+    border-right-color: $borderColor4;
+  }
+  50% {
+    border-color: $borderColor1;
+    border-bottom-color: $borderColor4;
+  }
+  75% {
+    border-color: $borderColor1;
+    border-left-color: $borderColor4;
+  }
+  100% {
+    border-color: $borderColor1;
+    border-top-color: $borderColor4;
+  }
+}
+
+.spinner{
+  margin-left: -($borderWidthX);
+  border: 0 solid $borderColor4;
+  border-width: $borderWidthY $borderWidthX;
+  @include animation(loading 750ms linear infinite);
+
+  *{
+    display: none;
+  }
+}
+
+.js {
+  .loading #content{
+    position: relative;
+
+    &:before{
+      @extend .spinner;
+      content: "";
+      left: 50%;
+      top: 20px;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+  }
+
+  .loading #content .hentry,
+  .loading.author .author-info,
+  .loading.archive h1{
+      @include opacity(0);
+  }
+
+  #content .hentry,
+  .author .author-info,
+  .archive h1{
+      @include transition(200ms opacity ease-in);
+      @include opacity(1);
+  }
+}

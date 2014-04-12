@@ -1,0 +1,219 @@
+/*
+Theme Name: Gallery
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+It's easy, just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+See http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+body {
+  direction: rtl;
+  unicode-bidi: embed; }
+
+caption, th, td {
+  text-align: right; }
+
+ul, ol {
+  margin-right: 1em;
+  margin-left: auto; }
+
+ul li, ol li {
+  padding-right: 1em;
+  padding-left: auto; }
+
+blockquote {
+  margin-right: 0;
+  margin-left: auto;
+  padding-right: 25px;
+  padding-left: auto;
+  border-width: 0 4px 0 0; }
+
+.gallery .gallery-caption {
+  text-align: right; }
+
+.gallery .gallery-item {
+  float: right; }
+
+.gallery .gallery-caption {
+  margin-right: 0;
+  margin-left: auto; }
+
+#access .menu {
+  /* dropdown arrow icon */
+  /* primary nav items above mobile */ }
+  #access .menu ul li a > #access .menu-indicator {
+    margin-left: auto;
+    margin-right: 5px; }
+  #access .menu ul li .sub-menu,
+  #access .menu ul li .children {
+    margin-left: 9999px; }
+    #access .menu ul li .sub-menu li a > #access .menu-indicator,
+    #access .menu ul li .children li a > #access .menu-indicator {
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      border-right: 3px solid #5e5e5e;
+      border-left: 0;
+      margin-right: 5px;
+      margin-left: auto;
+      left: 5px;
+      right: auto;
+      top: 50%; }
+    #access .menu ul li .sub-menu .sub-menu,
+    #access .menu ul li .children .sub-menu {
+      right: 208px;
+      left: auto; }
+  @media screen and (min-width: 641px) {
+    #access .menu ul li {
+      display: inline-block; }
+    #access .menu ul li a {
+      display: inline-block;
+      /* font-size: .8em; */ }
+    #access .menu ul li .sub-menu,
+    #access .menu ul li .children {
+      margin-right: 9999px; }
+    #access .menu ul li:hover > .sub-menu, #access .menu ul li:hover > .children {
+      margin-right: 0 !important;
+      margin-left: auto !important; }
+    #access .menu ul li .sub-menu li a,
+    #access .menu ul li .children li a {
+      text-align: right; } }
+
+@media screen and (min-width: 500px) {
+  .single .author-info {
+    text-align: right; }
+    .single .author-info .avatar {
+      float: right;
+      margin-right: 0;
+      margin-left: 20px; }
+    .single .author-info .author-description {
+      margin-right: 160px;
+      margin-left: 0; }
+
+  .widget-zone > ul > li,
+  .widget-zone.count-3 > ul > li,
+  .widget-zone.count-6 > ul > li,
+  .widget-zone.count-9 > ul > li,
+  .widget-zone.count-12 > ul > li,
+  .widget-zone.count-15 > ul > li,
+  .widget-zone.count-18 > ul > li,
+  .widget-zone.count-21 > ul > li,
+  .widget-zone.count-24 > ul > li,
+  .widget-zone.count-27 > ul > li {
+    float: right; } }
+@media screen and (min-width: 641px) {
+  #access .menu ul li.search-box-wrapper {
+    right: auto;
+    left: 0; }
+
+  #access .menu ul li a > .menu-indicator {
+    margin-left: 0;
+    margin-right: 5px; }
+
+  #access .menu ul li.search-box-wrapper .search-form button {
+    float: right; }
+
+  #access .menu ul li.search-box-wrapper .search-form input[type="text"] {
+    float: left; }
+
+  #access .menu ul li.search-box-wrapper .search-form .close-search {
+    left: 10px;
+    right: auto; }
+
+  #access .menu ul li.search-box-wrapper.boom {
+    left: 0;
+    right: auto; }
+
+  .search-form button {
+    float: left; }
+
+  .search-form input[type="search"] {
+    float: right; } }
+.post-content p {
+  text-align: right; }
+
+@media screen and (min-width: 641px) {
+  .mobile-menu {
+    display: none; } }
+.mobile-menu a {
+  display: block;
+  padding: 1.2em 0;
+  font-weight: bold;
+  background-color: #b2d234;
+  color: white; }
+  .mobile-menu a #access .menu-link:before {
+    content: '\2630';
+    font-size: 12px;
+    margin-right: 5px;
+    position: relative; }
+
+#primary .widget li a {
+  padding-left: 12px;
+  padding-right: 0; }
+
+#comments #respond {
+  text-align: right; }
+
+#respond .form-submit {
+  float: left;
+  text-align: left; }
+
+#respond .form-allowed-tags {
+  float: right;
+  text-align: right; }
+
+/* small screen */
+@media screen and (max-width: 600px) {
+  aside > ul > li {
+    float: right; }
+
+  #sidebar ul li .sub-menu {
+    border-right: 1px solid gainsboro;
+    padding-right: 15px;
+    padding-left: auto; }
+
+  .widget_search label {
+    float: right; }
+
+  .widget_search .search-submit {
+    float: left; }
+
+  .post-navigation .nav-previous,
+  .paging-navigation .nav-previous {
+    float: right; }
+
+  .post-navigation .nav-next,
+  .paging-navigation .nav-next {
+    float: left; }
+
+  .post-navigation a,
+  .paging-navigation a {
+    margin-left: 10px;
+    margin-right: auto; }
+
+  .post-navigation a + a,
+  .paging-navigation a + a {
+    margin-right: 10px;
+    margin-left: auto; }
+
+  .commentlist ol {
+    padding-right: 5%;
+    padding-left: auto; }
+
+  .commentlist li article {
+    margin-right: 96px;
+    margin-left: auto; }
+
+  .commentlist li img {
+    float: right;
+    margin-right: -96px;
+    margin-left: auto; }
+
+  .commentlist li time {
+    float: left; } }
+.commentlist,
+#comments #respond {
+  text-align: right; }
+
+@media (max-width: 650px) {
+  #comments time {
+    text-align: right; } }

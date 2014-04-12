@@ -1,0 +1,72 @@
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="phone"],
+select,
+textarea {
+  outline: 0;
+  width: 99.8%;
+  height: 40px;
+  margin-top: 10px;
+  display: block;
+  border: none;
+  background-color: #f9f9f9;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #525252;
+  padding: 8px 10px;
+  font-family: $body-font-family;
+  -webkit-appearance:none;
+  @include transition(200ms background-color linear);
+}
+
+input[type="password"] {
+  margin: 0;
+  width: auto;
+  display: inline;
+  vertical-align: middle;
+}
+
+textarea {
+  width: 100%;
+  min-height: 6em;
+}
+
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+  background-color: #eee;
+}
+
+input[type="submit"],
+input[type="reset"],
+button {
+  background-color: $primary-color;
+  color: contrast-color($primary-color,$white,$black,50%);
+  border: none;
+  font-size: 85%;
+  padding: .5em 1em;
+  height: 40px;
+  font-family: $body-font-family;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-appearance: none;
+  @include transition(200ms all linear);
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+  background-color: darken($primary-color,10%);
+}
+
+input:focus,
+input:active {
+	@include border-radius(4px);
+}

@@ -1,0 +1,72 @@
+#header {
+  font-size: 14px;
+  text-align: center;
+  z-index: 9999;
+
+  #blog-title,
+  #blog-description{
+    &,a{
+      color: $text-color;
+    }
+  }
+
+  .shade{
+    padding: 7em 0 0;
+  }
+
+  #blog-title {
+    position: relative;
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-family: $heading-font-family;
+    margin-bottom: .1em;
+  }
+
+  #blog-description {
+    font-size: 1.2em;
+    margin-bottom: 6em;
+    text-transform: lowercase;
+    font-family: $mono-font-family;
+
+      @media only screen and (max-width : 640px) {
+        margin-bottom: 3em;
+      }
+  }
+
+  @media only screen and (max-width : 640px) {
+    .shade{
+      padding: 3.5em 20px 0;
+    }
+  }
+
+  .has-header-image &{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media only screen and (min-width : 768px) {
+        background-size:  100% auto;
+      }
+
+    //.shade{
+    //  background: rgba(black,.2);
+    //}
+
+    #blog-title a,
+    #blog-description{
+      color: $white;
+    }
+
+    #blog-description{
+      @include text-shadow(0 0 30px rgb(0,0,0));
+      font-weight: bold;
+
+      @media only screen and (max-width : 640px) {
+        margin-bottom: 6em;
+      }
+    }
+  }
+
+}

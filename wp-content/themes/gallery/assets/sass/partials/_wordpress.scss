@@ -1,0 +1,64 @@
+.sticky,
+.bypostauthor {
+	visibility: visible;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin: 1em auto;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin: 1em auto;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 1em auto;
+}
+
+/* Captions */
+.wp-caption {
+	margin-bottom: 28px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	width: auto !important; /* need this to overwrite any specified widths that
+							 may be added through the backend */
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	.wp-caption-text {
+		color: #999;
+		font-size: .9em;
+		line-height: 160%;
+		font-style: italic;
+		padding: 0 0 1em;
+	}
+}
+
+.infinite-loader{
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+	left: 0;
+	right: 40px;
+	display: block;
+
+	.spinner{
+		margin: 0 auto;
+	}
+}
+
+.sharedaddy{
+	margin-top: 25px;
+}

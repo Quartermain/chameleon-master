@@ -1,0 +1,308 @@
+.widget-zone{
+	@extend .divide;
+  background-color: $white;
+
+	&.count-1{
+
+		.widget{
+			width: auto !important;
+			float: none !important;
+			font-size: .95em;
+			text-align: center;
+			margin-left: 7%;
+			margin-right: 7%;
+		}
+	}
+
+	@media screen and (min-width: 500px){
+
+		&.count-3,
+		&.count-6,
+		&.count-9,
+		&.count-12,
+		&.count-15,
+		&.count-18,
+		&.count-21,
+		&.count-24,
+		&.count-27{
+
+			> ul > li{
+				width: 33.3333333333334%;
+				float: left;
+			}
+		}
+	}
+
+      // when the number of widgets is not a multiple of three
+      @media screen and (min-width: 500px) {
+
+      &.count-2,
+      &.count-4,
+      &.count-5,
+      &.count-7,
+      &.count-8,
+      &.count-10,
+      &.count-11,
+      &.count-13,
+      &.count-14,
+      &.count-16,
+      &.count-17,
+      &.count-19,
+      &.count-20,
+      &.count-22,
+      &.count-23,
+      &.count-25,
+      &.count-26 {
+
+              > ul > li {
+                margin-bottom: 3em;
+                font-size: .8em;
+                text-align: left;
+                padding: 20px;
+
+                @media screen and (min-width: 500px){
+                  width: 46%;
+                  float: left;
+                  margin: 0 4% 3em;
+
+                  &:nth-child(odd) {
+                      margin-left: 0;
+                      clear: both;
+                  }
+                  &:nth-child(even) {
+                      margin-right: 0;
+                  }
+                }
+              }
+        }
+      }
+
+	&#sidebar-footer{
+		font-size: .85em;
+	}
+
+	.widgets{
+		max-width: $site-width/1.5;
+		margin: 0 auto;
+		color: lighten($text-color,40%);
+
+		.single &{
+			max-width: $narrow-content-width;
+		}
+	}
+
+    @media screen and (max-width: 860px) {
+		font-size: 120%;
+    }
+
+	ul,ol,li{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	> ul > li{
+		margin-bottom: 3em;
+		font-size: .8em;
+		text-align: left;
+		padding: 20px;
+
+		@media screen and (min-width: 500px){
+			width: 46%;
+			float: left;
+		}
+
+		ul,ol{
+			margin: 0 0 .5em 0;
+			padding: 0;
+			list-style: none;
+			@include border-radius(4px);
+			line-height: 2em;
+		}
+
+		li{
+			padding: 0;
+
+			a{
+				color: $primary-color;
+				padding: 8px 12px 8px 0;
+
+				&:hover{
+					color: darken($primary-color,10%);
+				}
+			}
+		}
+	}
+
+	.widgettitle{
+		margin-bottom: 1em;
+		text-transform: uppercase;
+		color: $text-color;
+		font-size: 1.3em;
+		letter-spacing: 1px;
+		font-weight: normal;
+	}
+
+}
+
+/* Calendar Widget */
+
+.widget_calendar {
+
+  #calendar_wrap {
+    position: relative;
+
+    #wp-calendar {
+    	width: 100%;
+
+    	td,th{
+    		width: 14.285714286%;
+    	}
+
+     	&,td,th,caption{
+    		text-align: center;
+		}
+
+      caption {
+        background-color: #f2f2f2;
+        color: contrast-color($primary-color,$gray,$white,60%);
+        padding: .5em;
+        font-weight: bold;
+        background-color: $primary-color;
+      }
+
+      thead th {
+        padding: .5em 0;
+        background: #f2f2f2;
+
+        &:last-child { border: none; }
+      }
+
+      tbody tr {
+        border-bottom: 1px solid $gray;
+
+        &:last-child { border: none; }
+
+        td {
+        	border: 1px solid $white;
+        	height: 2em;
+        	padding: 0;
+        	margin: 0;
+        	color: lighten($text-color,20%);
+
+        	a{
+				color: $primary-color;
+				display: block;
+				font-weight: bold;
+				border-bottom: none;
+	          	@include transition(200ms color linear);
+
+				&:hover{
+					color: $text-color;
+				}
+            }
+        }
+      }
+
+      tfoot {
+      	background: #f2f2f2;
+
+        td {
+          padding: .5em 1em;
+          font-weight: bold;
+
+          a{
+          	color: $text-color;
+          	@include transition(200ms color linear);
+
+          	&:hover{
+          		color: $primary-color;
+          	}
+          }
+
+          &#prev{
+          	text-align: left;
+          }
+
+          &#next{
+          	text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* RSS Widget */
+
+.widget_rss {
+
+  ul li {
+    padding-bottom: 2em !important;
+    line-height: 1.5;
+
+    a {
+      font-weight: bold;
+      color: $text-color !important;
+      font-size: 1.1em;
+      @include transition(200ms color linear);
+
+      &:hover{
+      	color: $primary-color !important;
+      }
+    }
+  }
+
+  .rss-date,
+  .rssSummary,
+  cite {
+    font-size: 1em;
+  }
+
+  .rss-date {
+    font-weight: normal;
+    color: $gray;
+    margin: 0 0 .9em 0;
+    display: block;
+  }
+
+  cite {
+    margin: .5em 0;
+  }
+}
+
+/* Pages Widget */
+
+.widget_pages {
+
+  ul ul {
+    padding-left: 1.5em;
+  }
+}
+
+/* Recent Comments */
+
+.widget_recent_comments {
+
+  ul li {
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.widget_nav_menu{
+	.search-form,
+	.mobile-menu,
+	.menu-link{
+		display: none;
+	}
+}
+
+/* Custom Text Widget */
+.widget_text {
+  // add line-height just in case the user does not add
+  // a paragraph tag to text
+  line-height: $base-line-height;
+}

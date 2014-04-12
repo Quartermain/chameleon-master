@@ -1,0 +1,254 @@
+#comments{
+  clear: both;
+  @extend .divide;
+
+  h2#comments-title,
+  h3#reply-title{
+    border-bottom: none;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+
+  .commentlist{
+    padding-bottom: 0;
+    margin-bottom: 2em;
+    text-align: left;
+  }
+
+  #respond{
+    text-align: left;
+
+    h3#reply-title{
+      font-weight: normal;
+    }
+  }
+
+  ol,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pingback,
+  .tweetback{
+    padding: 20px;
+    background: rgba(0,0,0,.03);
+    margin-bottom: 1px;
+    position: relative;
+
+    a{
+      @include transition(200ms color linear);
+    }
+
+    a:hover{
+      color: darken($primary-color,10%);
+    }
+
+    p{
+      margin: 0;
+      padding: 0;
+    }
+
+    .edit-link a{
+      position: relative;
+      float: right;
+      background: $primary-color;
+      font-size: 80%;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: .25em .5em;
+      color: contrast-color($primary-color,$text-color,$white,70%);
+      @include transition(200ms background-color linear,200ms color linear);
+
+      &:hover{
+        background: darken($primary-color,10%);
+        color: contrast-color(darken($primary-color,10%),$text-color,$white,70%);
+      }
+    }
+  }
+
+  p.logged-in-as{
+    text-transform: uppercase;
+    font-size: .7em;
+    padding: 10px 0;
+  }
+
+  & > ol > li.comment{
+
+    & > article{
+    }
+
+    article{
+      position: relative;
+      padding: 1em 70px 1em 100px;
+    }
+
+    .avatar{
+      position: absolute;
+      top: 1em;
+      left: 0;
+      @include border-radius(50%);
+    }
+
+    p{
+      font-style: normal;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    ul.children{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li.comment{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        & > article{
+          padding-left: 70px;
+
+          .avatar{
+            left: 100px;
+          }
+        }
+      }
+    }
+
+    & > ul.children{
+      margin-bottom: 1em;
+      padding-top: 0;
+      padding-left: 0;
+
+      & > li.comment article{
+        padding-left: 160px;
+      }
+    }
+
+  }
+}
+
+#respond{
+
+  .comment-form-email,
+  .comment-form-url,
+  .comment-form-author{
+    width: 30%;
+    margin-right: 5%;
+    float: left;
+    min-height: 50px;
+    margin-bottom: 10px;
+
+    .text-field-holder{
+      height: 50px;
+      display: block;
+      position: relative;
+    }
+
+    .textarea-holder{
+      @include clearfix();
+    }
+
+  }
+
+  .comment-form-url{
+    margin-right: 0;
+  }
+
+  .comment-form-comment{
+    clear: both;
+    margin-bottom: 7px;
+
+    label{
+      display: none;
+    }
+
+    textarea{
+      width: 100%;
+      height: 8em;
+      padding: 12px;
+      margin-bottom: 1em;
+    }
+  }
+
+  p{
+    position: relative;
+    display: block;
+
+    label{
+      display: block;
+    }
+  }
+
+  .form-allowed-tags{
+    width: auto;
+    color: $gray;
+    font-size: .9em;
+    float: left;
+    width: 65%;
+
+    code{
+      color: $gray;
+      background: transparent;
+    }
+  }
+
+  .form-submit{
+    float: right;
+    width: 35%;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #respond{
+    .comment-form-email,
+    .comment-form-url,
+    .comment-form-author{
+      display: block;
+      float: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: auto;
+
+      input,
+      textarea{
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+      }
+    }
+
+    .comment-form-comment{
+      textarea{
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+      }
+    }
+
+    .form-allowed-tags{
+
+    }
+
+    .form-allowed-tags,
+    .form-submit{
+      float: none;
+      width: auto;
+      min-height: auto;
+
+      input[type="submit"]{
+        width: 100%;
+        font-size: 1.5em;
+        padding: .75em 0;
+        height: auto;
+        min-height: auto;
+      }
+    }
+  }
+}

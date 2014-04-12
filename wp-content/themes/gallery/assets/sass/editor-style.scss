@@ -1,0 +1,23 @@
+// Compass libraries
+@import "compass/reset";
+@import "compass/typography";
+@import "compass/css3";
+@import "compass/typography/vertical_rhythm";
+
+// Variables
+@import "modules/variables";
+
+// Theme styles
+@import "partials/utilities";
+@import "partials/typography";
+@import "partials/colors";
+@import "partials/images";
+@import "partials/articles";
+@import "partials/wordpress";
+
+body#tinymce{
+  padding: 5px 10px;
+  font-size: 120%;
+  line-height: 1.5;
+  background-color: $white;
+}

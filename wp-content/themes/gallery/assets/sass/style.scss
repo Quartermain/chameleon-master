@@ -1,0 +1,41 @@
+/*
+Theme Name: Gallery
+Theme URI: http://upthemes.com/themes/gallery/
+Description: A media-sharing grid-style theme with masonry layout, infinite scroll, and single column post layouts.
+Author: UpThemes
+Author URI: http://upthemes.com
+Version: 3.0.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: white, green, gray, one-column, responsive-layout, accessibility-ready, custom-background,custom-colors,custom-header,custom-menu,editor-style,featured-images,featured-image-header,contemporary,flexible-header,threaded-comments,infinite-scroll,post-formats,rtl-language-support,sticky-post,translation-ready,art,artwork,blog,cartoon,collaboration,craft,design,fashion,food,lifestream,music,photoblogging,photography,portfolio,scrapbooking,travel,tumblelog,video,artistic,bright,clean,colorful,elegant,formal,geometric,light,minimal,modern,professional,simple,sophisticated,tech,vibrant
+Text Domain: gallery
+Domain Path: /languages/
+*/
+
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities/color/contrast";
+@import "compass/utilities/general/clearfix";
+@import "modules/variables";
+@import "modules/mixins";
+@import "partials/utilities";
+@import "partials/animate";
+@import "partials/typography";
+@import "partials/colors";
+@import "partials/forms";
+@import "partials/images";
+@import "partials/wordpress";
+@import "partials/search";
+@import "partials/articles";
+@import "partials/navigation";
+@import "partials/global";
+@import "partials/galleries";
+@import "partials/layout";
+@import "partials/loading";
+@import "partials/author";
+@import "partials/header";
+@import "partials/menu";
+@import "partials/comments";
+@import "partials/sidebar";
+@import "partials/footer";
+@import "partials/flexslider";

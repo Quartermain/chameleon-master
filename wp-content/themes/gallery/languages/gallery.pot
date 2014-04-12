@@ -1,0 +1,210 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-16 13:11-0600\n"
+"PO-Revision-Date: 2014-01-16 14:17-0600\n"
+"Last-Translator: Chris Wallace <chris@upthemes.com>\n"
+"Language-Team: UpThemes <support@upthemes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_attr_e\n"
+"X-Poedit-Basepath: /Users/chriswallace/Desktop/gallery/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive.php:27
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:30
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:30
+msgid "F Y"
+msgstr ""
+
+#: archive.php:33
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:33
+msgid "Y"
+msgstr ""
+
+#: archive.php:36
+#, php-format
+msgid "#%s"
+msgstr ""
+
+#: archive.php:39
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: archive.php:42
+msgid "Asides"
+msgstr ""
+
+#: archive.php:45
+msgid "Images"
+msgstr ""
+
+#: archive.php:48
+msgid "Videos"
+msgstr ""
+
+#: archive.php:51
+msgid "Audio"
+msgstr ""
+
+#: archive.php:54
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:57
+msgid "Status Updates"
+msgstr ""
+
+#: archive.php:60
+msgid "Links"
+msgstr ""
+
+#: archive.php:63
+msgid "Chats"
+msgstr ""
+
+#: archive.php:66
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:69
+msgid "Archives"
+msgstr ""
+
+#: comments.php:15
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:38
+#: comments.php:58
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:39
+#: comments.php:59
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:40
+#: comments.php:60
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:70
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:73
+msgid "Basic <abbr title=\"HyperText Markup Language\">HTML</abbr> allowed."
+msgstr ""
+
+#: comments.php:73
+msgid "Comment"
+msgstr ""
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:15
+msgid "Apologies, but no results were found. Perhaps searching will help find a related post."
+msgstr ""
+
+#: content-page.php:17
+#: content.php:39
+msgid "Pages:"
+msgstr ""
+
+#: content.php:27
+#, php-format
+msgid "Posted by %s on %s"
+msgstr ""
+
+#: functions.php:81
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:204
+#: functions.php:237
+#: functions.php:243
+msgid "on"
+msgstr ""
+
+#: search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10
+msgid "Search for:"
+msgstr ""
+
+#: inc/template-tags.php:12
+#, php-format
+msgid "Theme: %s by %s."
+msgstr ""
+
+#: inc/template-tags.php:34
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:34
+msgid "Edit"
+msgstr ""
+
+#: inc/template-tags.php:51
+#, php-format
+msgid "%1$s <span class=\"says\">said:</span>"
+msgstr ""
+
+#: inc/template-tags.php:59
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:68
+msgid "Reply <span>&darr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:103
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:153
+msgid "&larr;"
+msgstr ""
+
+#: inc/template-tags.php:154
+msgid "&rarr;"
+msgstr ""
+
+#: inc/template-tags.php:159
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:163
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
