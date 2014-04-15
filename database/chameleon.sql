@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2014 at 06:38 PM
+-- Generation Time: Apr 15, 2014 at 07:41 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `wp_nxs_log` (
   `msg` text NOT NULL,
   `extInfo` text NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
 
 --
 -- Dumping data for table `wp_nxs_log`
@@ -163,7 +163,13 @@ INSERT INTO `wp_nxs_log` (`id`, `date`, `act`, `nt`, `type`, `msg`, `extInfo`) V
 (43, '2014-04-15 12:54:40', '*** ID: 93, Type: nav_menu_item', '', 'BG', ' Status Changed: draft_to_publish. Autopost requested.', ''),
 (44, '2014-04-15 12:54:40', 'Skipped', '', 'I', 'Excluded Post Type: nav_menu_item (Post ID: 93)', ''),
 (45, '2014-04-15 13:26:15', '*** ID: 61, Type: post', '', 'BG', ' Status Changed: draft_to_publish. Autopost requested.', ''),
-(46, '2014-04-15 13:26:16', 'Start =- ', '', 'BG', '------=========#### NEW AUTO-POST REQUEST  PostID:(61) Scheduled +9 ####=========------', '');
+(46, '2014-04-15 13:26:16', 'Start =- ', '', 'BG', '------=========#### NEW AUTO-POST REQUEST  PostID:(61) Scheduled +9 ####=========------', ''),
+(47, '2014-04-16 03:21:33', '*** ID: 113, Type: nav_menu_item', '', 'BG', ' Status Changed: draft_to_publish. Autopost requested.', ''),
+(48, '2014-04-16 03:21:33', 'Skipped', '', 'I', 'Excluded Post Type: nav_menu_item (Post ID: 113)', ''),
+(49, '2014-04-16 03:21:33', '*** ID: 114, Type: nav_menu_item', '', 'BG', ' Status Changed: draft_to_publish. Autopost requested.', ''),
+(50, '2014-04-16 03:21:33', 'Skipped', '', 'I', 'Excluded Post Type: nav_menu_item (Post ID: 114)', ''),
+(51, '2014-04-16 03:21:33', '*** ID: 115, Type: nav_menu_item', '', 'BG', ' Status Changed: draft_to_publish. Autopost requested.', ''),
+(52, '2014-04-16 03:21:34', 'Skipped', '', 'I', 'Excluded Post Type: nav_menu_item (Post ID: 115)', '');
 
 -- --------------------------------------------------------
 
@@ -178,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   `autoload` varchar(20) NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=470 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=506 ;
 
 --
 -- Dumping data for table `wp_options`
@@ -283,7 +289,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (96, 'widget_archives', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (97, 'widget_meta', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (98, 'sidebars_widgets', 'a:4:{s:19:"wp_inactive_widgets";a:0:{}s:14:"sidebar-footer";a:2:{i:0;s:7:"pages-2";i:1;s:11:"tag_cloud-2";}s:14:"sidebar-single";a:0:{}s:13:"array_version";i:3;}', 'yes'),
-(99, 'cron', 'a:8:{i:1397579976;a:1:{s:19:"nxs_querypost_event";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:11:"nxsreposter";s:4:"args";a:0:{}s:8:"interval";i:90;}}}i:1397580949;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1397581416;a:1:{s:16:"nxs_hourly_event";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1397591880;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1397595547;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1397638771;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1397642719;a:1:{s:13:"sm_ping_daily";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(99, 'cron', 'a:8:{i:1397583666;a:1:{s:19:"nxs_querypost_event";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:11:"nxsreposter";s:4:"args";a:0:{}s:8:"interval";i:90;}}}i:1397585016;a:1:{s:16:"nxs_hourly_event";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1397591880;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1397595547;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1397638771;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1397642719;a:1:{s:13:"sm_ping_daily";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1397667349;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (102, '_transient_random_seed', 'bf31b78dc63aa344f43f7e5c92f6a7ee', 'yes'),
 (103, 'auth_key', 'amtWUB@f{hRT>,}mwP)pej@Im[;jz+D#2&Tfy4=,0~3`?Cm6~2)v@qTs&CES9ifR', 'yes'),
 (104, 'auth_salt', 'HpFWjPNaoF9l~G~`=/.{UXinwk+1P/Ky<!nm6Anhk#65t!C=)ClizHzCM6s8{,z/', 'yes'),
@@ -332,7 +338,6 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (368, 'widget_tag_cloud', 'a:2:{i:2;a:2:{s:5:"title";s:0:"";s:8:"taxonomy";s:8:"post_tag";}s:12:"_multiwidget";i:1;}', 'yes'),
 (380, 'category_children', 'a:1:{i:4;a:3:{i:0;i:5;i:1;i:6;i:2;i:7;}}', 'yes'),
 (383, 'nav_menu_options', 'a:2:{i:0;b:0;s:8:"auto_add";a:0:{}}', 'yes'),
-(429, '_transient_is_multi_author', '0', 'yes'),
 (433, '_site_transient_timeout_theme_roots', '1397578937', 'yes'),
 (434, '_site_transient_theme_roots', 'a:4:{s:7:"gallery";s:7:"/themes";s:14:"twentyfourteen";s:7:"/themes";s:14:"twentythirteen";s:7:"/themes";s:12:"twentytwelve";s:7:"/themes";}', 'yes'),
 (435, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1397577142;s:7:"checked";a:11:{s:19:"akismet/akismet.php";s:5:"2.6.0";s:36:"contact-form-7/wp-contact-form-7.php";s:5:"3.7.2";s:36:"google-sitemap-generator/sitemap.php";s:5:"4.0.2";s:9:"hello.php";s:3:"1.6";s:41:"better-wp-security/better-wp-security.php";s:6:"4.0.16";s:67:"social-networks-auto-poster-facebook-twitter-g/NextScripts_SNAP.php";s:5:"3.3.3";s:47:"really-simple-captcha/really-simple-captcha.php";s:3:"1.8";s:37:"tinymce-advanced/tinymce-advanced.php";s:7:"3.5.9.1";s:24:"wordpress-seo/wp-seo.php";s:7:"1.5.2.6";s:27:"wp-pagenavi/wp-pagenavi.php";s:4:"2.85";s:27:"wp-super-cache/wp-cache.php";s:3:"1.4";}s:8:"response";a:4:{s:36:"google-sitemap-generator/sitemap.php";O:8:"stdClass":6:{s:2:"id";s:3:"132";s:4:"slug";s:24:"google-sitemap-generator";s:6:"plugin";s:36:"google-sitemap-generator/sitemap.php";s:11:"new_version";s:5:"4.0.3";s:3:"url";s:55:"https://wordpress.org/plugins/google-sitemap-generator/";s:7:"package";s:73:"https://downloads.wordpress.org/plugin/google-sitemap-generator.4.0.3.zip";}s:41:"better-wp-security/better-wp-security.php";O:8:"stdClass":7:{s:2:"id";s:5:"18308";s:4:"slug";s:18:"better-wp-security";s:6:"plugin";s:41:"better-wp-security/better-wp-security.php";s:11:"new_version";s:6:"4.0.23";s:14:"upgrade_notice";s:205:"Better WP Security is now iThemes Security with new features and a greatly improved code base. We recommend disabling Better WP Security before upgrading to 4.0.23 if you are not already on 4.0 or greater.";s:3:"url";s:49:"https://wordpress.org/plugins/better-wp-security/";s:7:"package";s:68:"https://downloads.wordpress.org/plugin/better-wp-security.4.0.23.zip";}s:67:"social-networks-auto-poster-facebook-twitter-g/NextScripts_SNAP.php";O:8:"stdClass":6:{s:2:"id";s:5:"29712";s:4:"slug";s:46:"social-networks-auto-poster-facebook-twitter-g";s:6:"plugin";s:67:"social-networks-auto-poster-facebook-twitter-g/NextScripts_SNAP.php";s:11:"new_version";s:5:"3.3.4";s:3:"url";s:77:"https://wordpress.org/plugins/social-networks-auto-poster-facebook-twitter-g/";s:7:"package";s:89:"https://downloads.wordpress.org/plugin/social-networks-auto-poster-facebook-twitter-g.zip";}s:24:"wordpress-seo/wp-seo.php";O:8:"stdClass":6:{s:2:"id";s:4:"5899";s:4:"slug";s:13:"wordpress-seo";s:6:"plugin";s:24:"wordpress-seo/wp-seo.php";s:11:"new_version";s:7:"1.5.2.7";s:3:"url";s:44:"https://wordpress.org/plugins/wordpress-seo/";s:7:"package";s:64:"https://downloads.wordpress.org/plugin/wordpress-seo.1.5.2.7.zip";}}s:12:"translations";a:0:{}}', 'yes'),
@@ -371,7 +376,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=669 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=696 ;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -878,7 +883,31 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (653, 63, 'snap_MYURL', ''),
 (654, 63, 'snapEdIT', '1'),
 (667, 58, 'snap_MYURL', ''),
-(668, 58, 'snapEdIT', '1');
+(668, 58, 'snapEdIT', '1'),
+(669, 113, '_menu_item_type', 'custom'),
+(670, 113, '_menu_item_menu_item_parent', '0'),
+(671, 113, '_menu_item_object_id', '113'),
+(672, 113, '_menu_item_object', 'custom'),
+(673, 113, '_menu_item_target', ''),
+(674, 113, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(675, 113, '_menu_item_xfn', ''),
+(676, 113, '_menu_item_url', '#'),
+(678, 114, '_menu_item_type', 'custom'),
+(679, 114, '_menu_item_menu_item_parent', '0'),
+(680, 114, '_menu_item_object_id', '114'),
+(681, 114, '_menu_item_object', 'custom'),
+(682, 114, '_menu_item_target', ''),
+(683, 114, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(684, 114, '_menu_item_xfn', ''),
+(685, 114, '_menu_item_url', '#'),
+(687, 115, '_menu_item_type', 'custom'),
+(688, 115, '_menu_item_menu_item_parent', '0'),
+(689, 115, '_menu_item_object_id', '115'),
+(690, 115, '_menu_item_object', 'custom'),
+(691, 115, '_menu_item_target', ''),
+(692, 115, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(693, 115, '_menu_item_xfn', ''),
+(694, 115, '_menu_item_url', '#');
 
 -- --------------------------------------------------------
 
@@ -915,7 +944,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=113 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
 
 --
 -- Dumping data for table `wp_posts`
@@ -1003,16 +1032,16 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (81, 1, '2014-04-15 12:21:14', '2014-04-15 02:21:14', '<a href="http://localhost/chameleon-master/wp-content/uploads/2014/04/bl3.jpg"><img class="alignnone size-full wp-image-70" alt="bl3" src="http://localhost/chameleon-master/wp-content/uploads/2014/04/bl3.jpg" width="300" height="300" /></a>', 'The generated Lorem Ipsum is therefore always', '', 'publish', 'open', 'open', '', 'generated-lorem-ipsum-therefore-always-2', '', '', '2014-04-15 12:21:14', '2014-04-15 02:21:14', '', 0, 'http://localhost/chameleon-master/?p=81', 0, 'post', '', 0),
 (82, 1, '2014-04-15 12:21:14', '2014-04-15 02:21:14', '<a href="http://localhost/chameleon-master/wp-content/uploads/2014/04/bl3.jpg"><img class="alignnone size-full wp-image-70" alt="bl3" src="http://localhost/chameleon-master/wp-content/uploads/2014/04/bl3.jpg" width="300" height="300" /></a>', 'The generated Lorem Ipsum is therefore always', '', 'inherit', 'open', 'open', '', '81-revision-v1', '', '', '2014-04-15 12:21:14', '2014-04-15 02:21:14', '', 81, 'http://localhost/chameleon-master/?p=82', 0, 'revision', '', 0),
 (83, 1, '2014-04-15 12:34:35', '2014-04-15 02:34:35', 'Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!', 'Hello world!', '', 'inherit', 'open', 'open', '', '1-revision-v1', '', '', '2014-04-15 12:34:35', '2014-04-15 02:34:35', '', 1, 'http://localhost/chameleon-master/?p=83', 0, 'revision', '', 0),
-(84, 1, '2014-04-15 12:54:35', '2014-04-15 02:54:35', '', 'Home', '', 'publish', 'open', 'open', '', 'home', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 0, 'http://localhost/chameleon-master/?p=84', 1, 'nav_menu_item', '', 0),
-(85, 1, '2014-04-15 12:54:35', '2014-04-15 02:54:35', ' ', '', '', 'publish', 'open', 'open', '', '85', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 0, 'http://localhost/chameleon-master/?p=85', 2, 'nav_menu_item', '', 0),
-(86, 1, '2014-04-15 12:54:36', '2014-04-15 02:54:36', ' ', '', '', 'publish', 'open', 'open', '', '86', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 0, 'http://localhost/chameleon-master/?p=86', 9, 'nav_menu_item', '', 0),
-(87, 1, '2014-04-15 12:54:36', '2014-04-15 02:54:36', ' ', '', '', 'publish', 'open', 'open', '', '87', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 0, 'http://localhost/chameleon-master/?p=87', 10, 'nav_menu_item', '', 0),
-(88, 1, '2014-04-15 12:54:37', '2014-04-15 02:54:37', ' ', '', '', 'publish', 'open', 'open', '', '88', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 0, 'http://localhost/chameleon-master/?p=88', 7, 'nav_menu_item', '', 0),
-(89, 1, '2014-04-15 12:54:37', '2014-04-15 02:54:37', ' ', '', '', 'publish', 'open', 'open', '', '89', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 0, 'http://localhost/chameleon-master/?p=89', 8, 'nav_menu_item', '', 0),
-(90, 1, '2014-04-15 12:54:37', '2014-04-15 02:54:37', ' ', '', '', 'publish', 'open', 'open', '', '90', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 0, 'http://localhost/chameleon-master/?p=90', 3, 'nav_menu_item', '', 0),
-(91, 1, '2014-04-15 12:54:38', '2014-04-15 02:54:38', ' ', '', '', 'publish', 'open', 'open', '', '91', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 4, 'http://localhost/chameleon-master/?p=91', 4, 'nav_menu_item', '', 0),
-(92, 1, '2014-04-15 12:54:39', '2014-04-15 02:54:39', ' ', '', '', 'publish', 'open', 'open', '', '92', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 4, 'http://localhost/chameleon-master/?p=92', 5, 'nav_menu_item', '', 0),
-(93, 1, '2014-04-15 12:54:39', '2014-04-15 02:54:39', ' ', '', '', 'publish', 'open', 'open', '', '93', '', '', '2014-04-15 12:58:32', '2014-04-15 02:58:32', '', 4, 'http://localhost/chameleon-master/?p=93', 6, 'nav_menu_item', '', 0),
+(84, 1, '2014-04-15 12:54:35', '2014-04-15 02:54:35', '', 'Home', '', 'publish', 'open', 'open', '', 'home', '', '', '2014-04-16 03:21:32', '2014-04-15 17:21:32', '', 0, 'http://localhost/chameleon-master/?p=84', 1, 'nav_menu_item', '', 0),
+(85, 1, '2014-04-15 12:54:35', '2014-04-15 02:54:35', ' ', '', '', 'publish', 'open', 'open', '', '85', '', '', '2014-04-16 03:21:32', '2014-04-15 17:21:32', '', 0, 'http://localhost/chameleon-master/?p=85', 2, 'nav_menu_item', '', 0),
+(86, 1, '2014-04-15 12:54:36', '2014-04-15 02:54:36', ' ', '', '', 'publish', 'open', 'open', '', '86', '', '', '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 0, 'http://localhost/chameleon-master/?p=86', 9, 'nav_menu_item', '', 0),
+(87, 1, '2014-04-15 12:54:36', '2014-04-15 02:54:36', ' ', '', '', 'publish', 'open', 'open', '', '87', '', '', '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 0, 'http://localhost/chameleon-master/?p=87', 10, 'nav_menu_item', '', 0),
+(88, 1, '2014-04-15 12:54:37', '2014-04-15 02:54:37', ' ', '', '', 'publish', 'open', 'open', '', '88', '', '', '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 0, 'http://localhost/chameleon-master/?p=88', 7, 'nav_menu_item', '', 0),
+(89, 1, '2014-04-15 12:54:37', '2014-04-15 02:54:37', ' ', '', '', 'publish', 'open', 'open', '', '89', '', '', '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 0, 'http://localhost/chameleon-master/?p=89', 8, 'nav_menu_item', '', 0),
+(90, 1, '2014-04-15 12:54:37', '2014-04-15 02:54:37', ' ', '', '', 'publish', 'open', 'open', '', '90', '', '', '2014-04-16 03:21:32', '2014-04-15 17:21:32', '', 0, 'http://localhost/chameleon-master/?p=90', 3, 'nav_menu_item', '', 0),
+(91, 1, '2014-04-15 12:54:38', '2014-04-15 02:54:38', ' ', '', '', 'publish', 'open', 'open', '', '91', '', '', '2014-04-16 03:21:32', '2014-04-15 17:21:32', '', 4, 'http://localhost/chameleon-master/?p=91', 4, 'nav_menu_item', '', 0),
+(92, 1, '2014-04-15 12:54:39', '2014-04-15 02:54:39', ' ', '', '', 'publish', 'open', 'open', '', '92', '', '', '2014-04-16 03:21:32', '2014-04-15 17:21:32', '', 4, 'http://localhost/chameleon-master/?p=92', 5, 'nav_menu_item', '', 0),
+(93, 1, '2014-04-15 12:54:39', '2014-04-15 02:54:39', ' ', '', '', 'publish', 'open', 'open', '', '93', '', '', '2014-04-16 03:21:32', '2014-04-15 17:21:32', '', 4, 'http://localhost/chameleon-master/?p=93', 6, 'nav_menu_item', '', 0),
 (94, 1, '2014-04-15 13:19:43', '2014-04-15 03:19:43', '', 'The standard chunk of Lorem Ipsum', '', 'inherit', 'open', 'open', '', '79-autosave-v1', '', '', '2014-04-15 13:19:43', '2014-04-15 03:19:43', '', 79, 'http://localhost/chameleon-master/?p=94', 0, 'revision', '', 0),
 (95, 1, '2014-04-15 13:21:50', '2014-04-15 03:21:50', '', 'd61d44254608dd06ccdd2ff02982d14d', '', 'inherit', 'open', 'open', '', 'd61d44254608dd06ccdd2ff02982d14d', '', '', '2014-04-15 13:21:50', '2014-04-15 03:21:50', '', 79, 'http://localhost/chameleon-master/wp-content/uploads/2014/04/d61d44254608dd06ccdd2ff02982d14d.jpg', 0, 'attachment', 'image/jpeg', 0),
 (96, 1, '2014-04-15 13:21:52', '2014-04-15 03:21:52', '', 'sam-13', '', 'inherit', 'open', 'open', '', 'sam-13', '', '', '2014-04-15 13:21:52', '2014-04-15 03:21:52', '', 79, 'http://localhost/chameleon-master/wp-content/uploads/2014/04/sam-13.jpg', 0, 'attachment', 'image/jpeg', 0),
@@ -1031,7 +1060,10 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (109, 1, '2014-04-15 13:26:15', '2014-04-15 03:26:15', '<a href="http://localhost/chameleon-master/wp-content/uploads/2014/04/fa55c8bad0e242eb7986dc1135b50adb.jpg"><img class="alignnone size-medium wp-image-98" alt="fa55c8bad0e242eb7986dc1135b50adb" src="http://localhost/chameleon-master/wp-content/uploads/2014/04/fa55c8bad0e242eb7986dc1135b50adb-300x200.jpg" width="300" height="200" /></a>', 'Lorem Ipsum is simply dummy text of the printing', '', 'inherit', 'open', 'open', '', '61-revision-v1', '', '', '2014-04-15 13:26:15', '2014-04-15 03:26:15', '', 61, 'http://localhost/chameleon-master/?p=109', 0, 'revision', '', 0),
 (110, 1, '2014-04-15 13:27:17', '2014-04-15 03:27:17', '<a href="http://localhost/chameleon-master/wp-content/uploads/2014/04/184b7cb84d7b456c96a0bdfbbeaa5f14.jpg"><img class="alignnone size-medium wp-image-99" alt="184b7cb84d7b456c96a0bdfbbeaa5f14" src="http://localhost/chameleon-master/wp-content/uploads/2014/04/184b7cb84d7b456c96a0bdfbbeaa5f14-300x200.jpg" width="300" height="200" /></a>', 'The standard chunk of Lorem Ipsum', '', 'inherit', 'open', 'open', '', '68-revision-v1', '', '', '2014-04-15 13:27:17', '2014-04-15 03:27:17', '', 68, 'http://localhost/chameleon-master/?p=110', 0, 'revision', '', 0),
 (111, 1, '2014-04-15 13:28:25', '2014-04-15 03:28:25', '<a href="http://localhost/chameleon-master/wp-content/uploads/2014/04/d61d44254608dd06ccdd2ff02982d14d.jpg"><img class="alignnone size-medium wp-image-95" alt="d61d44254608dd06ccdd2ff02982d14d" src="http://localhost/chameleon-master/wp-content/uploads/2014/04/d61d44254608dd06ccdd2ff02982d14d-300x200.jpg" width="300" height="200" /></a>\r\n\r\nChameleon has two fully equipped on-sit', 'Check out our spac', '', 'inherit', 'open', 'open', '', '58-revision-v1', '', '', '2014-04-15 13:28:25', '2014-04-15 03:28:25', '', 58, 'http://localhost/chameleon-master/?p=111', 0, 'revision', '', 0),
-(112, 1, '2014-04-15 13:30:36', '2014-04-15 03:30:36', '<a href="http://localhost/chameleon-master/wp-content/uploads/2014/04/sam-8.jpg"><img class="alignnone size-full wp-image-97" alt="sam-8" src="http://localhost/chameleon-master/wp-content/uploads/2014/04/sam-8.jpg" width="300" height="223" /></a>\r\n\r\nContrary to popular belief, Lorem Ipsum is not simply random text.', 'Lorem Ipsum is simply dummy text of the printing', '', 'inherit', 'open', 'open', '', '63-revision-v1', '', '', '2014-04-15 13:30:36', '2014-04-15 03:30:36', '', 63, 'http://localhost/chameleon-master/?p=112', 0, 'revision', '', 0);
+(112, 1, '2014-04-15 13:30:36', '2014-04-15 03:30:36', '<a href="http://localhost/chameleon-master/wp-content/uploads/2014/04/sam-8.jpg"><img class="alignnone size-full wp-image-97" alt="sam-8" src="http://localhost/chameleon-master/wp-content/uploads/2014/04/sam-8.jpg" width="300" height="223" /></a>\r\n\r\nContrary to popular belief, Lorem Ipsum is not simply random text.', 'Lorem Ipsum is simply dummy text of the printing', '', 'inherit', 'open', 'open', '', '63-revision-v1', '', '', '2014-04-15 13:30:36', '2014-04-15 03:30:36', '', 63, 'http://localhost/chameleon-master/?p=112', 0, 'revision', '', 0),
+(113, 1, '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 'facebook', '', 'publish', 'open', 'open', '', 'facebook', '', '', '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 0, 'http://localhost/chameleon-master/?p=113', 11, 'nav_menu_item', '', 0),
+(114, 1, '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 'twiter', '', 'publish', 'open', 'open', '', 'twiter', '', '', '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 0, 'http://localhost/chameleon-master/?p=114', 12, 'nav_menu_item', '', 0),
+(115, 1, '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 'google', '', 'publish', 'open', 'open', '', 'google', '', '', '2014-04-16 03:21:33', '2014-04-15 17:21:33', '', 0, 'http://localhost/chameleon-master/?p=115', 13, 'nav_menu_item', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1114,7 +1146,10 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (90, 8, 0),
 (91, 8, 0),
 (92, 8, 0),
-(93, 8, 0);
+(93, 8, 0),
+(113, 8, 0),
+(114, 8, 0),
+(115, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -1146,7 +1181,7 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (5, 5, 'category', '', 4, 0),
 (6, 6, 'category', '', 4, 2),
 (7, 7, 'category', '', 4, 2),
-(8, 8, 'nav_menu', '', 0, 10);
+(8, 8, 'nav_menu', '', 0, 13);
 
 -- --------------------------------------------------------
 
