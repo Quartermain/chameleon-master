@@ -684,7 +684,7 @@ input:active {
         height: 100%; }
         #access .menu ul li.search-box-wrapper .search-form input[type="text"] {
           padding: 8px;
-          width: 160px;
+          width: 100%;
           height: 100%;
           float: right;
           -webkit-appearance: textfield; }
@@ -694,7 +694,8 @@ input:active {
           width: 25px;
           height: 100%;
           float: left;
-          background-color: white; }
+          background-color: white; 
+          display: none;}
           #access .menu ul li.search-box-wrapper .search-form button img {
             position: relative;
             top: -7px;
@@ -712,7 +713,7 @@ input:active {
         #access .menu ul li.search-box-wrapper .search-form .close-search {
           position: absolute;
           right: 10px;
-          top: 25%;
+          top: 50%;
           margin-top: -6px;
           z-index: 10;
           color: #aaaaaa;
@@ -1221,10 +1222,12 @@ span.category a {
 .single #container,
 .page #container,
 .error404 #container {
-  max-width: 700px;
+  max-width: 1060px;
   height: auto;
   margin: 0 auto;
-  padding: 20px; }
+  padding: 20px;
+  color: #fff;
+}
 .single #content,
 .page #content,
 .error404 #content {
@@ -1260,7 +1263,6 @@ span.category a {
 
 .single.custom-background #container,
 .page.custom-background #container {
-  background: white;
   padding: 40px;
   margin-bottom: 60px; }
 
@@ -1976,7 +1978,7 @@ span.category a {
     margin-bottom: 1em;
     text-transform: uppercase;
     color: #f15523;
-    font-size: 0.75em;
+    font-size: 100%;
     font-family: 'zwodrei_-_freebold';
     letter-spacing: 1px;
     font-weight: normal; }
