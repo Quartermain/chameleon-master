@@ -40,17 +40,18 @@
 	</div><!-- .shade -->
 
 	</div><!-- #header-->
-
-  <div id="access">
-	<nav>
-		<?php
-		wp_nav_menu(array(
-			'theme_location'  => 'primary_nav',
-			'container_class' => 'menu',
-			'menu_class'      => false,
-			'fallback_cb'     => 'gallery_page_menu'
-		));
-		?>
-	</nav>
-  </div><!-- #access -->
+	<div id="access">
+		<div class="menu-top">
+			<nav>
+				<?php
+				wp_nav_menu(array(
+					'theme_location'  => 'primary_nav',
+					'container_class' => 'menu',
+					'menu_class'      => false,
+					'fallback_cb'     => 'gallery_page_menu'
+				));
+				?>
+			</nav>
+	  	</div><!-- #access -->
+	</div>
   <div id="wrapper" class="hfeed">
