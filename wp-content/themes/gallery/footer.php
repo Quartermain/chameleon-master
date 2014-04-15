@@ -10,11 +10,12 @@
 ?>
 
 	</div><!--/#wrapper .hfeed-->
-	<div id="footer">
+	<div id="footer" style="display:none;">
 		<div id="siteinfo">
 			<span><?php echo gallery_get_footertext(); ?></span>
 		</div><!--/#siteinfo-->
 	</div><!--/#footer-->
+
 <?php wp_footer(); ?>
 </body>
 </html>
