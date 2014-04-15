@@ -670,7 +670,7 @@ input:active {
       overflow: hidden;
       padding: 0;
       width: auto;
-      height: 24px;
+      height: 26px;
       -webkit-transition: 200ms width ease-in;
       -moz-transition: 200ms width ease-in;
       -o-transition: 200ms width ease-in;
@@ -686,7 +686,7 @@ input:active {
         #access .menu ul li.search-box-wrapper .search-form input[type="text"] {
           padding: 8px;
           width: 100%;
-          height: 100%;
+          height: 26px;
           float: right;
           -webkit-appearance: textfield; }
           #access .menu ul li.search-box-wrapper .search-form input[type="text"]:focus {
@@ -714,7 +714,7 @@ input:active {
         #access .menu ul li.search-box-wrapper .search-form .close-search {
           position: absolute;
           right: 10px;
-          top: 50%;
+          top: 25%;
           margin-top: -6px;
           z-index: 10;
           color: #aaaaaa;
@@ -742,7 +742,7 @@ input:active {
 .page .entry-title,
 .page .page-title {
   font-size: 2em; 
-font-family: 'zwodrei_-_freebold';}
+}
 .single .entry-title,
 .page .entry-title {
   margin-bottom: 0; }
@@ -2401,4 +2401,38 @@ html[xmlns] .slides {
 .contact-footer {
   display: inline-block;
   width: 20%;
+}
+
+#access .menu ul li.menu-item-113 a,
+#access .menu ul li.menu-item-114 a,
+#access .menu ul li.menu-item-115 a {
+  text-indent: -999px;
+}
+#access .menu ul li.menu-item-113 a:hover,
+#access .menu ul li.menu-item-114 a:hover,
+#access .menu ul li.menu-item-115 a:hover {
+  background: transparent;
+}
+
+#access .menu ul li.menu-item-113 {
+  background: url("assets/img/social-icon.png") no-repeat left top;
+  width: 17px;
+  height: 19px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 35px;
+}
+#access .menu ul li.menu-item-114 {
+  background: url("assets/img/social-icon.png") no-repeat -23px top;
+  width: 17px;
+  height: 19px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#access .menu ul li.menu-item-115 {
+  background: url("assets/img/social-icon.png") no-repeat -48px top;
+  width: 17px;
+  height: 19px;
+  display: inline-block;
+  vertical-align: middle;
 }
