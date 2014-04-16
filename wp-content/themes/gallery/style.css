@@ -839,7 +839,7 @@ input:active {
   #masonry .status-private .panel .genericon:before {
     content: '\f470' !important; }
   #masonry .hentry {
-    width: 300px;
+    max-width: 300px;
     margin-bottom: 40px;
     font-size: 20px;
     background-color: white; }
@@ -1230,11 +1230,11 @@ span.category a {
   margin: 0 auto;
   padding: 20px;
   color: #fff;
-}
+}/*
 #container {
   max-width: 1060px;
   margin: 0 auto;
-}
+}*/
 .single #content,
 .page #content,
 .error404 #content {
