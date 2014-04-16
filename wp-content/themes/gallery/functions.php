@@ -361,7 +361,7 @@ function gallery_page_menu() {
  */
 function gallery_add_search_box($items, $args) {
 
-		$items .= '<li class="search-box-wrapper">' . get_search_form(false) . '</li>';
+		$items .= '<li class="title-form"> <span style="color:#febd3f;margin-left:120px">KEEP UPDTED WITH US</span></li><li class="search-box-wrapper">' . get_search_form(false) . '</li>';
 
 	return $items;
 }

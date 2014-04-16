@@ -681,7 +681,7 @@ input:active {
         position: relative;
         vertical-align: middle;
         padding: 0;
-        width: 210px;
+        width: 170px;
         height: 100%; }
         #access .menu ul li.search-box-wrapper .search-form input[type="text"] {
           padding: 8px;
@@ -1679,7 +1679,7 @@ span.category a {
       display: inline-block; }
     #access .menu ul li a {
       display: inline-block;
-      padding: 18px .75em; } }
+      padding: 18px .56em; } }
   @media only screen and (min-width: 641px) {
     #access .menu ul li .sub-menu,
     #access .menu ul li .children {
@@ -2420,7 +2420,6 @@ html[xmlns] .slides {
   height: 19px;
   display: inline-block;
   vertical-align: middle;
-  margin-left: 35px;
 }
 #access .menu ul li.menu-item-114 {
   background: url("assets/img/social-icon.png") no-repeat -23px top;
