@@ -96,6 +96,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 }
 
+@font-face {
+    font-family: 'texgyreadventorregular';
+    src: url('fonts/texgyreadventor-regular-webfont.eot');
+    src: url('fonts/texgyreadventor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/texgyreadventor-regular-webfont.woff') format('woff'),
+         url('fonts/texgyreadventor-regular-webfont.ttf') format('truetype'),
+         url('fonts/texgyreadventor-regular-webfont.svg#texgyreadventorregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
 /**
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the
@@ -1257,7 +1271,8 @@ span.category a {
   .single .hentry .post-content,
   .page .hentry .post-content,
   .error404 .hentry .post-content {
-    margin-bottom: 1em; }
+    margin-bottom: 1em; 
+    font-family: 'texgyreadventorregular';}
 
 .custom-background .archive-header, .custom-background .author .author-info, .author .custom-background .author-info {
   background-color: white;
