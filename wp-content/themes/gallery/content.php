@@ -42,11 +42,11 @@
 	  <div class="tags"><?php the_tags( ' <span class="hashtag">#','</span><span class="hashtag">#','</span>'); ?></div>
 	</div><!--/.post-meta-->
 
-	<?php get_template_part('author-bio'); ?>
+	<!--?php get_template_part('author-bio'); ?-->
 
 	<?php get_sidebar('single'); ?>
 
-	<?php comments_template(); ?>
+	<!--?php comments_template(); ?-->
 
 <?php else: ?>
 
