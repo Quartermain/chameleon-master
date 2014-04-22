@@ -416,6 +416,20 @@ code {
   font-size: .85em;
   line-height: 1.5;
   font-family: "Inconsolata"; }
+.tagcloud a {    font-size: inherit !important;
+}
+.tagcloud a:after {
+    display: inline-block;
+    content: ",";
+}
+.tagcloud a:last-child:after {
+    content:"";
+}
+
+
+#sidebar-footer ul li a {
+    text-transform: lowercase;
+}
 
 @media only screen and (min-width: 900px) {
   body {
@@ -424,7 +438,7 @@ code {
   body {
     font-size: 140%; } }
 h1, h2, h3, h4, h5, h6, #blog-title {
-  font-weight: bold;
+  font-weight: normal;
   margin-bottom: 1em;
   line-height: auto;
   font-family: 'langdonregular'; }
@@ -1010,7 +1024,7 @@ input:active {
   margin-bottom: .6em; }
 
 @media screen and (min-width: 640px) {
-    
+   
   .page-links {
     font-size: .65em; }
 
@@ -1490,6 +1504,7 @@ span.category a {
     color: #222222; }
   #header .shade {
     padding: 0; }
+  #blog-description {display: none;}
   #header #blog-title {
     position: relative;
     font-size: 3em;
@@ -1895,6 +1910,27 @@ span.category a {
   text-align: right; }
 
 @media only screen and (max-width: 640px) {
+     .is-mobile #access .menu ul li .children, .is-mobile #access .menu ul li .sub-menu {
+        background: none repeat scroll 0 0 #FFFFFF;
+    display: block;
+    margin-left: 10px;
+    position: static;
+   
+    }
+    .content-footer > div, .widget-zone .content-footer .widgets {
+         width: auto;
+        display: block; padding: 10px ;
+    }
+   .widget-zone  .content-footer  .widgets > li {
+        width: auto;
+       
+        display: block;
+        float: none;
+    }
+    .is-mobile #access .menu ul li .children a, .is-mobile #access .menu ul li .sub-menu a {
+         background: none repeat scroll 0 0 #FFFFFF;
+          text-align: left;color: #FEBD3F;
+    }
   #respond .comment-form-email,
   #respond .comment-form-url,
   #respond .comment-form-author {
@@ -2417,7 +2453,7 @@ html[xmlns] .slides {
 .widget-zone .widgets > li {
   display: inline-block;
   vertical-align: top;
-  width: 50%;
+  width: 45%;
 }
 
 .contact-footer {

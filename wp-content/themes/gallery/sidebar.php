@@ -11,7 +11,9 @@
 	<aside id="sidebar-footer" class="cf widget-zone count-<?php echo gallery_widget_count('footer'); ?>">
 		<div class="content-footer">
 			<div class="logo-footer">
-				<img  src="<?php echo get_bloginfo('template_directory');?>/assets/img/logo-footer.png"/>
+                            <a href="<?php echo get_site_url(); ?>" title="<?php bloginfo('name') ?>">
+                                <img  src="<?php echo get_bloginfo('template_directory');?>/assets/img/logo-footer.png"/>
+                            </a>
 			</div>
 
 			<ul class="widgets">

@@ -18,9 +18,9 @@
 
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'gallery' ), 'after' => '</div>' ) ); ?>
 
-	  <?php
+	  <!--?php
 	  if( comments_open() ) {
 	  	comments_template();
 	  }
-	  ?>
+	  ?-->
 	</article><!--/.post-->

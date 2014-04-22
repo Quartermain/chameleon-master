@@ -134,7 +134,7 @@
 
       $submenu.parent('li').addClass('has-submenu').find('> a').append('<span class="menu-indicator"></span>');
 
-      $(this).after($menu_toggle);
+      $(this).before($menu_toggle);
 
       $('.menu-link').on("click touchend",function(e){
         e.preventDefault();

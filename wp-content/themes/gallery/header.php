@@ -33,7 +33,12 @@
 	<div class="shade cf">
 
 		<div id="branding">
-			<div id="blog-title"><span><a href="<?php echo get_site_url(); ?>" title="<?php bloginfo('name') ?>" rel="home"><?php bloginfo('name') ?></a></span></div>
+			<div id="blog-title">
+                                <a href="<?php echo get_site_url(); ?>" title="<?php bloginfo('name') ?>" rel="home">
+                                    <img  src="<?php echo get_bloginfo('template_directory');?>/assets/img/logo.png"/>
+                                </a>
+                        
+                        </div>
 			<div id="blog-description"><?php bloginfo('description'); ?></div>
 		</div><!-- /#branding -->
 
