@@ -13,9 +13,8 @@ get_header(); ?>
 
 	<div id="content">
 
-		<header class="archive-header">
-			<h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'gallery' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		</header><!-- .archive-header -->
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'gallery' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		
 
 		<?php echo get_search_form(); ?>
 

@@ -4,7 +4,7 @@ class ITSEC_Tweaks {
 
 	private $settings;
 
-	function __construct() {
+	function run() {
 
 		$this->settings = get_site_option( 'itsec_tweaks' );
 
@@ -23,8 +23,16 @@ class ITSEC_Tweaks {
 			remove_action( 'wp_head', 'rsd_link' );
 		}
 
-		if ( isset( $this->settings['disable_xmlrpc'] ) && $this->settings['disable_xmlrpc'] == true ) {
+		//Disable XML-RPC
+		if ( isset( $this->settings['disable_xmlrpc'] ) && $this->settings['disable_xmlrpc'] == 2 ) {
+
+			add_filter( 'xmlrpc_enabled', array( $this, 'empty_return_function' ) );
 			add_filter( 'bloginfo_url', array( $this, 'remove_pingback_url' ), 10, 2 );
+
+		}
+
+		if ( isset( $this->settings['disable_xmlrpc'] ) && $this->settings['disable_xmlrpc'] == 1 ) {
+			add_filter( 'xmlrpc_methods', array( $this, 'xmlrpc_methods' ) );
 		}
 
 		//ban extra-long urls if turned on
@@ -62,11 +70,6 @@ class ITSEC_Tweaks {
 		//remove core update notifications if turned on
 		if ( ( ! isset( $itsec_globals['is_iwp_call'] ) || $itsec_globals['is_iwp_call'] === false ) && isset( $this->settings['core_updates'] ) && $this->settings['core_updates'] == true ) {
 			add_action( 'plugins_loaded', array( $this, 'core_updates' ) );
-		}
-
-		//Disable XML-RPC
-		if ( isset( $this->settings['disable_xmlrpc'] ) && $this->settings['disable_xmlrpc'] == true ) {
-			add_filter( 'xmlrpc_enabled', '__return_false' );
 		}
 
 		//Execute jQuery check
@@ -122,7 +125,7 @@ class ITSEC_Tweaks {
 		if ( ! current_user_can( 'manage_options' ) ) {
 
 			remove_action( 'admin_notices', 'update_nag', 3 );
-			add_filter( 'pre_site_transient_update_core', create_function( '$a', "return null;" ) );
+			add_filter( 'pre_site_transient_update_core', array( $this, 'empty_return_function' ) );
 			wp_clear_scheduled_hook( 'wp_version_check' );
 
 		}
@@ -228,7 +231,7 @@ class ITSEC_Tweaks {
 		if ( ! current_user_can( 'manage_options' ) ) {
 
 			remove_action( 'load-update-core.php', 'wp_update_plugins' );
-			add_filter( 'pre_site_transient_update_plugins', create_function( '$a', "return null;" ) );
+			add_filter( 'pre_site_transient_update_plugins', array( $this, 'empty_return_function' ) );
 			wp_clear_scheduled_hook( 'wp_update_plugins' );
 
 		}
@@ -308,10 +311,33 @@ class ITSEC_Tweaks {
 		if ( ! current_user_can( 'manage_options' ) ) {
 
 			remove_action( 'load-update-core.php', 'wp_update_themes' );
-			add_filter( 'pre_site_transient_update_themes', create_function( '$a', "return null;" ) );
+			add_filter( 'pre_site_transient_update_themes', array( $this, 'empty_return_function' ) );
 			wp_clear_scheduled_hook( 'wp_update_themes' );
 
 		}
+
+	}
+
+	/**
+	 * Removes the pingback ability from XMLRPC
+	 *
+	 * @since 4.0.20
+	 *
+	 * @param array $methods XMLRPC methods
+	 *
+	 * @return array XMLRPC methods
+	 */
+	public function xmlrpc_methods( $methods ) {
+
+		if ( isset( $methods['pingback.ping'] ) ) {
+			unset( $methods['pingback.ping'] );
+		}
+
+		if ( isset( $methods['pingback.extensions.getPingbacks'] ) ) {
+			unset( $methods['pingback.extensions.getPingbacks'] );
+		}
+
+		return $methods;
 
 	}
 

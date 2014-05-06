@@ -4,13 +4,16 @@ class ITSEC_SSL {
 
 	private $settings;
 
-	function __construct() {
+	function run() {
 
 		$this->settings = get_site_option( 'itsec_ssl' );
 
 		//Don't redirect any SSL if SSL is turned off.
 		if ( isset( $this->settings['frontend'] ) && $this->settings['frontend'] >= 1 ) {
+
 			add_action( 'template_redirect', array( $this, 'ssl_redirect' ) );
+			add_filter( 'the_content', array( $this, 'replace_content_urls' ) );
+
 		}
 
 	}
@@ -73,7 +76,7 @@ class ITSEC_SSL {
 			if ( ( $require_ssl == 1 && $this->is_ssl() === false ) || ( $require_ssl != 1 && $this->is_ssl() === true ) ) {
 
 				$href = ( $_SERVER['SERVER_PORT'] == '443' ? 'http' : 'https' ) . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-				wp_redirect( $href, 301 );
+				wp_redirect( $href, 302 );
 
 			}
 
@@ -82,12 +85,32 @@ class ITSEC_SSL {
 			if ( ( $this->settings['frontend'] == 2 && ! $this->is_ssl() ) || ( ( $this->settings['frontend'] == 0 || $this->settings['frontend'] == 1 ) && $this->is_ssl() ) ) {
 
 				$href = ( $_SERVER['SERVER_PORT'] == '443' ? 'http' : 'https' ) . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-				wp_redirect( $href, 301 );
+				wp_redirect( $href, 302 );
 
 			}
 
 		}
 
+	}
+
+	/**
+	 * Replace urls in content with ssl
+	 *
+	 * @since 4.1
+	 *
+	 * @param string $content the content
+	 *
+	 * @return string the content
+	 */
+	public function replace_content_urls( $content ) {
+
+		if ( $this->is_ssl() ) {
+
+			$content = str_replace( site_url( '', 'http' ), site_url( '', 'https' ), $content );
+
+		}
+
+		return $content;
 	}
 
 }

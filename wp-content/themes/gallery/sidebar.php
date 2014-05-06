@@ -21,11 +21,11 @@
 
 			</ul>
 			<div class="contact-footer">
-				<h2 class="widgettitle">Pages</h2>
+				<h2 class="widgettitle">Contact</h2>
 				<ul>
-					<li class="page_item page-item-2"><a>6 Cecil Plac e, Prahran 3181</a></li>
-					<li class="page_item page-item-32"><a>P +61 3 9510 1188</a></li>
-					<li class="page_item page-item-34"><a>F +61 3 9510 9922</a></li>
+					<li class="page_item page-item-2">6 Cecil Place, Prahran 3181</li>
+					<li class="page_item page-item-32">P +61 3 9510 1188</li>
+					<li class="page_item page-item-34">F +61 3 9510 9922</li>
 					<li class="page_item page-item-30"><a href="casting@chameleon.net.au">E casting@chameleon.net.au</a></li>
 				</ul>
 			</div>

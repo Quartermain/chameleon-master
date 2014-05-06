@@ -23,6 +23,7 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 <?php wp_head(); ?>
 </head>
 
@@ -48,7 +49,11 @@
 	<div id="access">
 		<div class="menu-top">
 			<nav>
+				
 				<?php
+				 if( function_exists( 'mc4wp_form' ) ) {
+    mc4wp_form();
+}
 				wp_nav_menu(array(
 					'theme_location'  => 'primary_nav',
 					'container_class' => 'menu',
@@ -60,3 +65,8 @@
 	  	</div><!-- #access -->
 	</div>
   <div id="wrapper" class="hfeed">
+      <script>
+          jQuery(document).ready(function(){
+              jQuery( ".mc4wp-form" ).appendTo( ".menu .mail-chip" );
+          })
+  </script>

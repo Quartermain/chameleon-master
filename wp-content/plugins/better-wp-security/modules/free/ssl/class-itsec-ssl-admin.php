@@ -9,7 +9,7 @@ class ITSEC_SSL_Admin {
 		$module_path,
 		$has_ssl;
 
-	function __construct( $core, $module ) {
+	function run( $core, $module ) {
 
 		if ( is_admin() ) {
 
@@ -115,7 +115,7 @@ class ITSEC_SSL_Admin {
 
 		if ( isset( get_current_screen()->id ) && strpos( get_current_screen()->id, 'security_page_toplevel_page_itsec_settings' ) !== false ) {
 
-			wp_enqueue_script( 'itsec_ssl_js', $this->module_path . 'js/admin-ssl.js', 'jquery', $itsec_globals['plugin_build'] );
+			wp_enqueue_script( 'itsec_ssl_js', $this->module_path . 'js/admin-ssl.js', array( 'jquery' ), $itsec_globals['plugin_build'] );
 
 			//make sure the text of the warning is translatable
 			wp_localize_script( 'itsec_ssl_js', 'ssl_warning_text', array( 'text' => __( 'Are you sure you want to enable SSL? If your server does not support SSL you will be locked out of your WordPress Dashboard.', 'it-l10n-better-wp-security' ) ) );
@@ -185,7 +185,7 @@ class ITSEC_SSL_Admin {
 			add_action( 'itsec_admin_init', array( $this, 'save_network_options' ) ); //save multisite options
 		}
 
-		if ( $this->settings['frontend'] == 1 ) {
+		if ( isset( $this->settings['frontend'] ) && $this->settings['frontend'] == 1 ) {
 
 			add_action( 'post_submitbox_misc_actions', array( $this, 'ssl_enable_per_content' ) );
 			add_action( 'save_post', array( $this, 'save_post' ) );
@@ -348,6 +348,8 @@ class ITSEC_SSL_Admin {
 
 		}
 
+		$content .= '<p>' . __( 'Note: When turning SSL on you will be logged out and you will have to log back in. This is to prevent possible cookie conflicts that could make it more difficult to get in otherwise.', 'it-l10n-better-wp-security' ) . '</p>';
+
 		echo $content;
 
 		$this->core->do_settings_section( 'security_page_toplevel_page_itsec_settings', 'ssl_settings', false );
@@ -367,8 +369,8 @@ class ITSEC_SSL_Admin {
 	 *
 	 * @since 4.0
 	 *
-	 * @param  array $input       options to build rules from
-	 * @param bool $deactivation whether or not we're deactivating
+	 * @param  array $input        options to build rules from
+	 * @param bool   $deactivation whether or not we're deactivating
 	 *
 	 * @return array         rules to write
 	 */
@@ -377,23 +379,44 @@ class ITSEC_SSL_Admin {
 		//Return options to default on deactivation
 		if ( $deactivation === true || ( isset( $_GET['action'] ) && $_GET['action'] == 'deactivate' ) ) {
 
-			$input       = array();
-			$rules_array = array();
-
+			$input        = array();
 			$deactivating = true;
+			$initials     = get_site_option( 'itsec_initials' );
 
-			$initials = get_site_option( 'itsec_initials' );
+			if ( isset( $initials['login'] ) && $initials['login'] === false && defined( 'FORCE_SSL_LOGIN' ) && FORCE_SSL_LOGIN === true ) { //initially off, now on
 
-			if ( isset( $initials['login'] ) && $initials['login'] === false ) {
 				$input['login'] = false;
-			} else {
+
+			} elseif ( isset( $initials['login'] ) && $initials['login'] === true && ( ! defined( 'FORCE_SSL_LOGIN' ) || FORCE_SSL_LOGIN === false ) ) { //initially on, now off
+
 				$input['login'] = true;
+
+			} elseif ( defined( 'FORCE_SSL_LOGIN' ) && FORCE_SSL_LOGIN === true ) { //no initial state, now on
+
+				$input['login'] = true;
+
+			} else { //no initial state or other info. Set off
+
+				$input['login'] = false;
+
 			}
 
-			if ( isset( $initials['admin'] ) && $initials['admin'] === false ) {
+			if ( isset( $initials['admin'] ) && $initials['admin'] === false && defined( 'FORCE_SSL_ADMIN' ) && FORCE_SSL_ADMIN === true ) { //initially off, now on
+
 				$input['admin'] = false;
-			} else {
+
+			} elseif ( isset( $initials['admin'] ) && $initials['admin'] === true && ( ! defined( 'FORCE_SSL_ADMIN' ) || FORCE_SSL_ADMIN === false ) ) { //initially on, now off
+
 				$input['admin'] = true;
+
+			} elseif ( defined( 'FORCE_SSL_ADMIN' ) && FORCE_SSL_ADMIN === true ) { //no initial state, now on
+
+				$input['admin'] = true;
+
+			} else { //no initial state or other info. Set off
+
+				$input['admin'] = false;
+
 			}
 
 		} else {
@@ -478,7 +501,7 @@ class ITSEC_SSL_Admin {
 	public function register_file( $file_modules ) {
 
 		$file_modules['ssl'] = array(
-			'config'  => array( $this, 'save_config_rules' ),
+			'config' => array( $this, 'save_config_rules' ),
 		);
 
 		return $file_modules;
@@ -501,6 +524,10 @@ class ITSEC_SSL_Admin {
 		if ( $input['login'] !== $this->settings['login'] || $input['admin'] !== $this->settings['admin'] ) {
 
 			add_site_option( 'itsec_config_changed', true );
+
+			if ( $input['admin'] === true || $input['admin'] === true ) {
+				add_site_option( 'itsec_clear_login', true );
+			}
 
 		}
 

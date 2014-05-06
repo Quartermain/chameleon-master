@@ -42,6 +42,7 @@ class ITSEC_Setup {
 			'nginx_file'               => ABSPATH . 'nginx.conf',
 			'infinitewp_compatibility' => false,
 			'did_upgrade'              => false,
+			'lock_file' => false,
 		);
 
 		if ( ! $case ) {
@@ -110,7 +111,7 @@ class ITSEC_Setup {
 
 		if ( $has_pro ) {
 
-			foreach ( $itsec_globals['pro_modules'] as $module ) {
+			foreach ( $itsec_globals['pro_modules'] as $module => $info ) {
 
 				if ( file_exists( $pro_modules_folder . '/' . $module . '/setup.php' ) ) {
 					require( $pro_modules_folder . '/' . $module . '/setup.php' );
@@ -120,7 +121,7 @@ class ITSEC_Setup {
 
 		}
 
-		foreach ( $itsec_globals['free_modules'] as $module ) {
+		foreach ( $itsec_globals['free_modules'] as $module => $info ) {
 
 			if ( ( $has_pro === false || ! in_array( $module, $itsec_globals['pro_modules'] ) ) && file_exists( $free_modules_folder . '/' . $module . '/setup.php' ) ) {
 				require( $free_modules_folder . '/' . $module . '/setup.php' );
@@ -392,7 +393,10 @@ class ITSEC_Setup {
 		delete_site_option( 'itsec_rewrites_changed' );
 		delete_site_option( 'itsec_config_changed' );
 		delete_site_option( 'itsec_had_other_version' );
+		delete_site_option( 'itsec_no_file_lock_release' );
+		delete_site_option( 'itsec_clear_login' );
 		delete_site_transient( 'ITSEC_SHOW_WRITE_FILES_TOOLTIP' );
+		delete_site_transient( 'itsec_upload_dir' );
 
 		$htaccess = ITSEC_Lib::get_htaccess();
 
@@ -400,7 +404,7 @@ class ITSEC_Setup {
 		$perms = substr( sprintf( '%o', @fileperms( $htaccess ) ), - 4 );
 
 		if ( $perms == '0444' ) {
-			@chmod( $htaccess, 0644 );
+			@chmod( $htaccess, 0664 );
 		}
 
 		flush_rewrite_rules();

@@ -20,9 +20,8 @@ get_header(); ?>
 	<div id="container" class="cf">
 
 		<div id="content">
-
-			<header class="archive-header">
-				<h1 class="archive-title">
+                    <article class=" page type-page status-publish hentry" >
+				<h1 class="page-title">
 					<?php
 						if ( is_day() ) :
 							printf( __( 'Daily Archives: %s', 'gallery' ), get_the_date() );
@@ -79,7 +78,6 @@ get_header(); ?>
 						printf( '<div class="taxonomy-description">%s</div>', $term_description );
 					endif; ?>
 
-			</header><!-- .archive-header -->
 
 			<div id="masonry">
 
@@ -94,7 +92,7 @@ get_header(); ?>
 				<?php endif; ?>
 
 			</div><!-- /#masonry -->
-
+</article>
 		</div><!-- /#content -->
 
 		<?php gallery_content_nav( 'nav-below' ); ?>

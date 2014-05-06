@@ -359,10 +359,11 @@ function gallery_page_menu() {
  *
  * @return $items All nav menu items
  */
+
 function gallery_add_search_box($items, $args) {
 
-		$items .= '<li class="search-box-wrapper">' . get_search_form(false) . '</li>';
-
+		$items .= '<li  class="search-box-wrapper">' . get_search_form(false) . '</li>';
+		$items .= '<li  class="mail-chip"></li>';
 	return $items;
 }
 add_filter('wp_nav_menu_items','gallery_add_search_box', 10, 2);

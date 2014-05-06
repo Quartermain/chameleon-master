@@ -9,7 +9,7 @@ class ITSEC_Four_Oh_Four_Admin {
 		$module,
 		$module_path;
 
-	function __construct( $core, $module ) {
+	function run( $core, $module ) {
 
 		if ( is_admin() ) {
 
@@ -60,7 +60,7 @@ class ITSEC_Four_Oh_Four_Admin {
 
 		if ( isset( get_current_screen()->id ) && strpos( get_current_screen()->id, 'security_page_toplevel_page_itsec_settings' ) !== false ) {
 
-			wp_enqueue_script( 'itsec_four_oh_four_js', $this->module_path . 'js/admin-four-oh-four.js', 'jquery', $itsec_globals['plugin_build'] );
+			wp_enqueue_script( 'itsec_four_oh_four_js', $this->module_path . 'js/admin-four-oh-four.js', array( 'jquery' ), $itsec_globals['plugin_build'] );
 
 		}
 
